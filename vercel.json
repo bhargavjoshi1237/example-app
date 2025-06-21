@@ -1,23 +1,16 @@
 {
   "version": 2,
+  "framework": null,
   "builds": [
     {
-      "src": "/public/**",
+      "src": "public/**",
       "use": "@vercel/static"
-    },
-    {
-      "src": "artisan",
-      "use": "@vercel/php"
     }
   ],
   "routes": [
     {
-      "src": "/build/assets/(.*)",
-      "dest": "/public/build/assets/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/public/index.php"
+      "dest": "/public/$1"
     }
   ],
   "outputDirectory": "public"
